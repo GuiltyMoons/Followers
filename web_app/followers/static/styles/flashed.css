@@ -1,0 +1,12 @@
+.flashed{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.flashed-error{
+  color: red;
+}
+
+.flashed-success{
+  color: green;
+}

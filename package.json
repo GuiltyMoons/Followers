@@ -1,0 +1,54 @@
+{
+  "name": "followers",
+  "version": "1.0.0",
+  "description": "Instagram Analytics App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-python": "pyinstaller -w -F --add-data web_app/followers/templates:templates --add-data web_app/followers/static:static web_app/run.py --distpath dist-flask",
+    "package-electron": "electron-builder",
+    "package-cleanup": "rm -rf build && rm -rf run.spec && rm -rf dist-flask",
+    "package": "npm run package-python && npm run package-electron && npm run package-cleanup"
+  },
+  "build": {
+    "appId": "com.followers.CI",
+    "productName": "Followers",
+    "asar": false,
+    "asarUnpack": [
+      "**/*.node"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "main.js",
+      "icon.png",
+      "splash.html",
+      "splash.css",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "dist-flask/",
+        "to": "app/dist-flask",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.cci.drexel.edu/fds21/64cibyte/followers.git"
+  },
+  "author": "Erick Meyer, Frank Cao, Jiacong Li",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.2.3",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "puppeteer": "^8.0.0"
+  }
+}

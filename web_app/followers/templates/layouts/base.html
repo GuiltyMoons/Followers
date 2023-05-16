@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/base.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/flashed.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/')}}{{theme}}.css">
+        {% block css_files %}{% endblock %}
+
+
+        <!-- Box Icons -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+
+        {% if title %}
+          <title>Followers - {{ title }}</title>
+        {% else %}
+          <title>Followers</title>
+        {% endif %}
+        <script>
+          const url ="{{request.url.replace('http://localhost:5000','')}}"
+          const url2 ="{{request.url.replace('http://127.0.0.1:5000','')}}"
+
+        </script>
+    </head>
+    <body id="body-pd">
+      <header>
+        <div class="search">
+        <form id="search" action="/search/" method="POST">
+          <span><input type="text" id="username" name="username" placeholder="username">
+            <input type="submit" value="Quick Search"></span>
+        </form>
+        </div>
+  <script>
+document.querySelector('#search').onsubmit = function() {
+  this.setAttribute('action', "/pupsearch/" + document.querySelector('#search input[name=username]').value)
+}
+  </script>
+      </header>
+
+        <div class="l-nav" id="navbar">
+            <nav class="nav">
+                <div>
+                    <div class="nav__brand">
+                        <i class="bx bx-menu nav__toggle" id="nav-toggle"></i>
+                        <a href="#" class="nav__logo">{{ username }}</a>
+                    </div>
+                    <div class="nav__list">
+                        <a href="/" id ="/" class="nav__link">
+                            <i class='bx bx-home nav__icon'></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+                        
+                        <!--<a href="#" class="nav__link">
+                            <i class='bx bx-chat nav__icon' ></i>
+                            <span class="nav__name">Messenger</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-folder-open nav__icon' ></i>
+                            <span class="nav__name">Projects</span>
+                        </a>-->
+                        {% if 'analytics' in request.url %}
+                          {% set id = request.url.replace('http://localhost:5000','') %}
+                        {% endif %}
+                        <a href="{{ url_for('default_analytics',)}}" id="{{id}}" class="nav__link">
+                            <i class='bx bx-stats nav__icon'></i>
+                            <span class="nav__name">Analytics</span>
+                        </a>
+
+                        <!--<a href="#" class="nav__link">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__name">Team</span>
+                        </a>-->
+
+                        <a href="{{ url_for('settings')}}" id="/settings" class="nav__link">
+                            <i class='bx bx-cog nav__icon' ></i>
+                            <span class="nav__name">Settings</span>
+                        </a>
+
+                        <a href="{{ url_for('dataPrivacyPolicy')}}" id="/privacy-policy" class="nav__link">
+                          <i class='bx bxs-lock-open nav__icon' ></i>
+                          <span class="nav__name">Privacy Policty</span>
+                        </a>
+
+                    </div>
+                </div>
+            
+                <a href="/quit" class="nav__link">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Quit</span>
+                </a>
+
+            </nav>
+        </div>
+
+          <div class>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flashed flashed-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+
+
+
+<!-- Main JS -->
+<!-- <script src="js/main.js"></script>-->
+        <script src="{{ url_for('static',filename='scripts/base.js') }}"></script>
+
+        <script>
+          let activeLink = document.getElementById(url);
+          if(!activeLink){
+            activeLink = document.getElementById(url2);
+          }
+           if(activeLink){
+            activeLink.classList.add('active')
+           }
+        </script>
+
+    </body>
+</html>

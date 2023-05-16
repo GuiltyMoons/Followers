@@ -1,0 +1,1 @@
+Hi, my name is Jiacong Li and I'm a freshman majoring in Computer Science. I'm the front end developer for this project titled "followers."

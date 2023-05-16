@@ -1,0 +1,2 @@
+Hi, my name is Frank Cao, a freshman at Drexel University majoring in Computer Science. I'm one of the two backend developers for this project
+titled "followers."

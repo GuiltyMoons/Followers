@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+
+{% block css_files %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/settings.css') }}"> 
+{% endblock %}
+
+{% block content %}
+  <h1>Settings</h1>
+
+
+
+  <h2 class="setting">Themes</h2>
+  <form id="color_theme" action="{{url_for('updateTheme')}}" method="POST">
+    <label class = "radio_container light_container">
+      <input type="radio" class= "radio_circle radio_element" id="light" name="theme" value="light" onchange="this.form.submit()">
+      <span for="light" class = "radio_element">Light</span>
+    </label>
+    <label class = "radio_container">
+      <input type="radio" class= "radio_circle radio_element" id="dark" name="theme" value="dark" onchange="this.form.submit()">
+      <span for="dark" class= "radio_element">Dark</span>
+    </label>
+    <label class = "radio_container">
+      <input type="radio" class= "radio_circle radio_element" id="visualAccessibility"  name="theme" value="visualAccessibility" onchange="this.form.submit()">
+      <span for="visualAccessibility" class= "radio_element">Visual Accessibility</span>
+    </label>
+  </form>
+
+
+  <!--Determine which theme should be clicked when page loads-->
+  <script>
+    let theme = "{{theme}}";
+    document.getElementById(theme).checked=true;
+
+  </script>
+
+
+
+{% endblock %}

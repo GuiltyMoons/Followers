@@ -1,0 +1,9 @@
+node_modules/
+dist-flask/
+build/
+run.spec
+dist/
+__pycache__/
+
+#macOS Files
+.DS_Store

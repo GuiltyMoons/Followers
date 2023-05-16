@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html' %}
+
+{% block css_files %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/search.css') }}"> 
+{% endblock %}
+
+
+{% block content %}
+  <div class="uinfo">
+  <img src="{{ data[2] }}">
+  <h1><span>{{ username }}</span></h1>
+  <h1>Followers: <span>{{ data[0] }}</span></h1>
+  <h1>Following: <span>{{ data[1] }}</span></h1>
+  </div>
+{% endblock %}

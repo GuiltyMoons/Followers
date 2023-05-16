@@ -1,0 +1,7 @@
+.uinfo{
+  text-align: center;
+}
+
+.uinfo span{
+  color: var(--active-color);
+}

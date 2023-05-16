@@ -1,0 +1,31 @@
+:root{
+  --bg-color: #FEFFFF;
+  --nav-bg-color: #4E4E50;
+  --active-color: #C3073F;
+  --radio-hover-color: lightgray;
+  --radio-active-color: gray;
+}
+
+body{
+  color: #000;
+  background: var(--bg-color);
+}
+
+.l-nav{
+  background: var(--nav-bg-color);
+}
+
+/* Active Links */
+.active{
+    color: var(--active-color);
+}
+
+.active::before{
+    background-color: var(--active-color);
+}
+
+/* This is the user added cards */
+.a1{
+  color: black;
+  background: white;
+}

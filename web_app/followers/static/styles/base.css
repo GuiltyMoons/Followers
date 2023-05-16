@@ -1,0 +1,192 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+/* Variable CSS */
+:root{
+    --nav-width: 92px;
+
+    /* Colors */
+    --: #F92672;
+    --nav-bg-color: #121212;
+    --background-color: #1e1e1e;
+    --white-color: #FFF;
+    --active-color: #a55eea;
+    --radio-hover-color: #36393f;
+    --radio-active-color: #1b1c1d;
+
+
+
+    --sub-color: yellow;
+
+    /* Font and Typography */
+    /*--body-font: 'Poppins', sans-serif;*/
+    --body-font:'Gruppo', cursive;
+    --normal-font-size: 1rem; /*Should use VH prob */
+    --small-font-size: .875rem;
+
+    /* Z index */
+    --z-fixed: 100;
+}
+
+
+/* Base */
+*,::before,::after{
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    padding: 0 0 0 6.75rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s;
+    background: var(--background-color);
+    color: var(--white-color)
+}
+
+header{
+  width: 50%;
+  left: 25%;
+  height: 3rem;
+  position: relative;
+  margin: 0;
+  top:0;
+}
+
+
+
+
+h1{
+    margin: 0;
+}
+
+h2.setting{
+  color: var(--active-color);
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/* L Nav */
+.l-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: var(--nav-bg-color);
+    color: var(--white-color);
+    padding: 1.5rem 1.5rem 2rem;
+    transition: .5s;
+    z-index: var(--z-fixed);
+}
+
+/* Nav */
+.nav{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.nav__brand{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.nav__toggle{
+    font-size: 1.25rem;
+    font-size: 3.55vh;
+    padding: .75rem;
+    cursor: pointer;
+}
+.nav__logo{
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+.nav__link{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: .75rem;
+    padding: .75rem;
+    color: var(--white-color);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    transition: .3s;
+    cursor: pointer;
+}
+.nav__link:hover{
+    color: var(--);
+}
+.nav__icon{
+    font-size: 2rem;
+}
+.nav__name{
+    font-size: var(--small-font-size);
+}
+
+/* Expander Menu */
+.expander{
+    width: calc(var(--nav-width) + 9.25rem);
+    color: red;
+}
+
+/* Add padding body */
+.body-pd{
+    padding: 2rem 0 0 16rem;
+}
+
+/* Active Links */
+.active{
+    color: var(--active-color);
+}
+
+.active::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: #a55eea;
+}
+
+.search{
+  color: red;
+  background: var(--nav-bg-color);
+  text-align: center;
+  font-size: 1rem;
+  height: 2rem;
+}
+
+
+.search input[type=text]{
+  color: #a55eea;
+  height: 2rem;
+  font-size: 1rem;
+  width: 50%;
+}
+
+.search input[type=text]:focus{
+  color: red;
+}
+
+.search input[type=text]::placeholder{
+  color: #8e8e8e;
+}
+
+.search input[type=submit]{
+  color: var(--active-color);
+  background: black;
+  font-size: 1rem;
+  height: 2rem;
+}

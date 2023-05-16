@@ -1,0 +1,57 @@
+:root{
+    --bg-color: #ffffff;
+    --nav-bg-color: #000;
+    --active-color: #ffffff;
+    --radio-hover-color: lightgray;
+    --radio-active-color: gray;
+}
+
+h1{
+    color: #000;
+}
+h2{
+    color: #000;
+}
+h3{
+    color: #000;
+}
+h4{
+    color: #000;
+}
+p{
+    color: #000;
+}
+strong{
+    color: #000;
+}
+
+.sidenav a:hover{
+
+    color: lightgray;
+    text-decoration: none;
+  }
+
+  
+body{
+    color: #000;
+    background: var(--bg-color);
+}
+
+.l-nav{
+    background: var(--nav-bg-color);
+}
+
+/* Active Links */
+.active{
+    color: var(--active-color);
+}
+
+.active::before{
+    background-color: var(--active-color);
+}
+
+/* This is the user added cards */
+.a1{
+    color: black;
+    background: white;
+}

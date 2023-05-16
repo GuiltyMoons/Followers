@@ -1,0 +1,87 @@
+  :root{
+    --nav: #3700B3;
+    --bg: #1e1e1e;
+  }
+  .grid-container {
+  display: grid;
+  grid-template-columns: .15fr .7fr .15fr;
+  grid-template-rows: .1fr .8fr .1fr;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 93vh;
+}
+
+/* Give every child element its grid name */
+.header {
+  grid-area: header;
+  background-color: var(--bg);
+}
+
+.sidenav {
+  grid-area: sidenav;
+  background-color: var(--nav);
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.sidenav a{
+    color: #000000;
+    text-decoration: none;
+  }
+  .sidenav a:visited{
+    text-decoration: none;
+  }
+  .sidenav a:hover{
+
+    color: var(--nav-hover-color);
+    text-decoration: none;
+  }
+  .sidenav a:focus{
+    text-decoration: none;
+  }
+
+  .sidenav a:hover, a:active{
+    text-decoration: none; 
+  }
+
+  a.active-user{
+    color: #fff;
+    after:
+  }
+
+a.active-user::before{
+  position: relative;
+  display: inline-block;
+  content: '';
+  left: 0;
+  width: 2px;
+  height: 1rem;
+  background-color: gold;
+}
+
+
+.side {
+  grid-area: sidenav;
+  background-color: #394263;
+}
+
+.main {
+  grid-area: main;
+  background-color: #000000;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: var(--bg);
+}
+
+.sidebar {
+    height:22%;
+    text-align: center;
+    padding-top: 90px;
+    font-size:50px;
+
+}
+

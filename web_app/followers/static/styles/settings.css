@@ -1,0 +1,28 @@
+.light_container{
+    margin-bottom: 4px;
+}
+
+.radio_container{
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.radio_container:hover{
+    background-color: var(--radio-hover-color);
+}
+
+.radio_container:active{
+    background-color: var(--radio-active-color);
+}
+
+.radio_circle{
+    margin-right: 10px;
+}
+
+.radio_element{
+    display: flex;
+    align-items: center;
+}

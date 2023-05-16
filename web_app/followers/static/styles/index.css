@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+*{
+  font-family: 'Gruppo', cursive;
+}
+.a1{
+  color: white; 
+  position: relative;
+  left: 25%;
+  width:50%;
+  border: 10px solid var(--active-color);
+  border-radius: 8px;
+  background: black;
+  text-align: center;
+}
+.a1 span{
+  color: var(--active-color);
+}
+
+.a1 a{
+  color: #D11A2A;
+  text-decoration: none;
+  font-size: 3rem;
+}
+.a1 a:visited{
+  text-decoration: none;
+}
+.a1 a:hover{ text-decoration: none;
+}
+.a1 a:focus{
+  text-decoration: none;
+}
+
+.a1 a:hover, a:active{
+  text-decoration: none; 
+}
+
+#add{
+    text-align: center;
+  }
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  position: relative;
+  left: 25%;
+  width:50%;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.container{
+  display: flex;
+  height:180px;
+}
+
+.container:hover {
+  transform: scale(1.2);
+}
+
+.item{
+    flex-grow: 1;
+}
+
+
+

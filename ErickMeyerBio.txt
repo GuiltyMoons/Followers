@@ -1,0 +1,3 @@
+Hi, my name is Erick Meyer.
+I am a freshman at Drexel University majoring in Computer Science.
+I am one of the two backend developers for the project "followers".
